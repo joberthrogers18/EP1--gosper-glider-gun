@@ -1,28 +1,30 @@
-#ifndef VETOR_BIDIMENCIONAL
-#define VETOR_BIDIMENCIONAL
+#ifndef VETOR_BIDIMENCIONAL_HPP
+#define VETOR_BIDIMENCIONAL_HPP
 
 using namespace std;
 
-class vetor
+class Vetor
 {
 private:
   int coluna;
   int linha;
   int contador;
+  char matriz[20][38];
 
 public:
   Vetor();
 
-  ~Vetor();
 
   int getColuna();
   void setColuna(int coluna);
   int getLinha();
   void setLinha(int linha);
-  int getContador();
-  void  setContador(int contador);
+  char getMatriz();
+  void  setMatriz();
 
-  void imprimeMatriz();
+  void imprimeMatriz(int linha, int coluna);
+  void Padrao();
+
 
 };
 
