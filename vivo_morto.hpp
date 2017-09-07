@@ -13,12 +13,12 @@ public:
   Vivo();
 
   char getVivo();
-  void setVivo(char vivo);
-  void getMorto();
-  void setMorto(vhar morto);
+  void setVivo();
+  char getMorto();
+  void setMorto();
 
 
-  void verificarVida(char valor, int vivos);
+  char verificarVida(char valor, int vivos);
 
 
 };

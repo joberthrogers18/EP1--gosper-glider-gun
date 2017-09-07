@@ -10,15 +10,15 @@ using namespace std;
    return ser;
  }*/
 
- void Vivo::setVivo(char vivo){
+ void Vivo::setVivo(){
    vivo = 'X';
  }
 
- void Vivo::getVivo(){
+ char Vivo::getVivo(){
    return vivo;
  }
 
- void Vivo::setMorto(char morto){
+ void Vivo::setMorto(){
    morto = '-';
  }
 
@@ -26,19 +26,19 @@ using namespace std;
    return morto;
  }
 
- void Vivo::verificarVida(char valor, int vivos){
+ char Vivo::verificarVida(char valor, int vivos){
    if(valor == getVivo()){
         if (vivos > 3){
-         return '-';
+         return getMorto();
        }
        else if (vivos < 2){
-         return '-';
+         return getMorto();
        }
 
    }
    else if(valor == getMorto()){
        if (vivos == 3){
-         return 'X';
+         return getVivo();
        }
    }
 
