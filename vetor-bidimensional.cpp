@@ -8,6 +8,7 @@ Vetor::Vetor(){
   int coluna = 38;
   int linha = 20;
   char matriz[20][38];
+  char matriz_reserva[30][38];
 
 }
 
@@ -163,11 +164,41 @@ void Vetor::Padrao(){
 
 }
 
-void Vetor::imprimeMatriz(int linha, int coluna){
+void Vetor::imprimeMatriz(){
 
-  for(linha=0 ; linha< 20 ; linha++){
-    for(coluna=0; coluna< 38 ; coluna++){
+  for(linha=0 ; linha<  20; linha++){
+    for(coluna=0; coluna< 38; coluna++){
       if(matriz[linha][coluna] == 'X'){
+        cout << "X" << " ";
+      }
+      else{
+        cout << "-" << " ";
+      }
+    }
+    cout << endl;
+  }
+}
+
+void Vetor::colarMatriz(){
+  for(linha=0 ; linha<  20; linha++){
+    for(coluna=0; coluna< 38; coluna++){
+      if(matriz[linha][coluna] == 'X'){
+        matriz_reserva[linha][coluna] = 'X';
+      }
+      else if (matriz[linha][coluna] == '-'){
+        matriz_reserva[linha][coluna] = '-';
+      }
+    }
+    cout << endl;
+  }
+}
+
+
+void Vetor::imprimecolarMatriz(){
+
+  for(linha=0 ; linha<  20; linha++){
+    for(coluna=0; coluna< 38; coluna++){
+      if(matriz_reserva[linha][coluna] == 'X'){
         cout << "X" << " ";
       }
       else{
