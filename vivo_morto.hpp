@@ -6,20 +6,21 @@ using namespace std;
 class Vivo
 {
 private:
-  char ser;
+  char vivo;
+  char morto;
 
 public:
   Vivo();
 
-  ~Vivo();
-
-  void
-  char getSer();
-
-  void setVivo();
-  void setMorto();
+  char getVivo();
+  void setVivo(char vivo);
+  void getMorto();
+  void setMorto(vhar morto);
 
 
-}
+  void verificarVida(char valor, int vivos);
+
+
+};
 
 #endif
