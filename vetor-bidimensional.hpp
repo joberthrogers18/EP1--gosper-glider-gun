@@ -6,26 +6,26 @@
 using namespace std;
 
 class Vetor : public Vivo{
-private:
+protected:
   int coluna;
   int linha;
-  int contador;
+  int vivos;
   char matriz[20][38];
   char matriz_reserva[20][38];
 
 public:
   Vetor();
 
-
+  int getVivos();
+  void setVivos(int vivos);
   int getColuna();
   void setColuna(int coluna);
   int getLinha();
   void setLinha(int linha);
-  char getMatriz();
-  void  setMatriz();
-  char setMatrizreserva();
-  void getMatrizreserva();
+  void setMAtriz(int linha,int coluna, char valor);
 
+  int verificar_vivos(int i, int j);
+  void implementa();
   void imprimeMatriz();
   void colarMatriz();
   void Padrao();
