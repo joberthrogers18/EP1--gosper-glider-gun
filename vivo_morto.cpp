@@ -3,36 +3,29 @@
 using namespace std;
 
  Vivo::Vivo(){
-   //ser = '-';
- }
-
- /*char Vivo::getSer(){
-   return ser;
- }*/
-
- void Vivo::setVivo(){
    vivo = 'X';
+   morto = '-';
  }
 
  char Vivo::getVivo(){
    return vivo;
- }
 
- void Vivo::setMorto(){
-   morto = '-';
  }
-
   char Vivo::getMorto(){
    return morto;
  }
 
- char Vivo::verificarVida(char valor, int vivos){
-   if(valor == getVivo()){
+ char Vivo::verificarVida(int linha, int coluna,char valor, int vivos){
+  if(valor == getVivo()){
         if (vivos > 3){
-         return getMorto();
+          return getMorto();
        }
        else if (vivos < 2){
-         return getMorto();
+
+        return getMorto();
+       }
+       else{
+         return valor;
        }
 
    }
@@ -40,6 +33,8 @@ using namespace std;
        if (vivos == 3){
          return getVivo();
        }
+       else{
+         return valor;
+       }
    }
-
  }

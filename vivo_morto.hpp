@@ -17,9 +17,7 @@ public:
   char getMorto();
   void setMorto();
 
-
-  char verificarVida(char valor, int vivos);
-
+  char verificarVida(int linha, int coluna,char valor, int vivos);
 
 };
 
