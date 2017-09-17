@@ -29,6 +29,8 @@ void Exploder::exploder(){
 
   int i;
 
+  setIteracoes();
+
   for (linha = 0; linha < 20; linha++){
       for (coluna = 0; coluna < 40; coluna++){
           setMAtriz(linha,coluna,'.');
@@ -63,10 +65,11 @@ void Exploder::exploder(){
       setMAtriz(4+7,5+26,'x');
       setMAtriz(5+7,5+26,'x');
 
-  for(i = 0; i < 200; i ++){
+  for(i = 0; i < getIteracoes(); i ++){
     system("clear");
     implementa(20,40);
     imprimecolarMatriz(20,40);
+    cout << "ITERAÇÕES: " << i+1 << endl;
     colarMatriz();
     usleep(200000);
   }
@@ -74,14 +77,9 @@ void Exploder::exploder(){
 }
 
 void Exploder::exploder(int linha_add, int coluna_add){
-int i,iteracoes, tamanho_linha, tamanho_coluna;
+int i;
 
   setIteracoes();
-
-  iteracoes =  getIteracoes();
-
-  tamanho_linha = getLinha();
-  tamanho_coluna = getColuna();
 
   for (linha = 0; linha < 40; linha++){
       for (coluna = 0; coluna < 60; coluna++){
@@ -103,10 +101,11 @@ int i,iteracoes, tamanho_linha, tamanho_coluna;
   setMAtriz(3+linha_add,4+coluna_add,'x');
   setMAtriz(4+linha_add,4+coluna_add,'x');
 
-  for(i = 0; i < iteracoes; i ++){
+  for(i = 0; i < getIteracoes(); i ++){
     system("clear");
     implementa(40,60);
     imprimecolarMatriz(40,60);
+    cout << "ITERAÇÕES: " << i+1 << endl;
     colarMatriz();
     usleep(200000);
   }
