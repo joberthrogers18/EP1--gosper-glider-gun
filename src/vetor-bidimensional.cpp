@@ -26,22 +26,6 @@ void Vetor::setMAtrizreserva(int linha, int coluna, char valor){
   matriz_reserva[linha][coluna] = valor;
 }
 
-void Vetor::setColuna(int coluna){
-  this->coluna = coluna;
-}
-
-int Vetor::getColuna(){
-  return coluna;
-}
-
-void Vetor::setLinha(int m_linha){
- this->linha = linha;
-}
-
-int Vetor::getLinha(){
-  return linha;
-}
-
  int Vetor::verificar_vivos(int ultimo_linha, int ultimo_coluna,int linha, int coluna, char valor){
 	 int vivo=0;
      int i,j, intervalo_a1,intervalo_a2,intervalo_b1, intervalo_b2;
@@ -119,11 +103,11 @@ int Vetor::getLinha(){
  char Vetor::verificarVida(int linha, int coluna,char valor, int vivos){
   if(valor == getVivo()){
       if (vivos > 3){
-          return '.';
+          return getMorto();
        }
        else if (vivos < 2){
 
-        return '.';
+        return getMorto();
       }
        else{
          return valor;
@@ -132,7 +116,7 @@ int Vetor::getLinha(){
    }
    else if(valor == getMorto()){
        if (vivos == 3){
-         return 'x';
+         return getVivo();
        }
        else{
          return valor;
@@ -144,36 +128,11 @@ int Vetor::getLinha(){
 void Vetor::implementa(int valor_linha,int valor_coluna){
   int linha, coluna, numero_vivos;
 
-  //cout << "implementa:"<<valor_linha << " " << valor_coluna <<endl;
-
   for (linha = 0; linha < valor_linha; linha++){
       for (coluna = 0; coluna < valor_coluna; coluna++){
           numero_vivos = verificar_vivos(valor_linha,valor_coluna,linha, coluna, matriz[linha][coluna]);
-          //if(matriz[linha][coluna] == 'x'){
-            //numero_vivos = numero_vivos - 1;
-          //}
-          //cout << numero_vivos;
           matriz_reserva[linha][coluna] = verificarVida(linha,coluna,matriz[linha][coluna], numero_vivos);
-          //cout << verificarVida(linha,coluna,matriz[linha][coluna], numero_vivos);
       }
-      //cout << endl;
-  }
-}
-
-void Vetor::imprimeMatriz(int valor_linha,int valor_coluna){
-
-    cout << valor_linha << " " << valor_coluna <<endl;
-
-  for(linha=0 ; linha<  valor_linha; linha++){
-    for(coluna=0; coluna< valor_coluna ; coluna++){
-      if(matriz[linha][coluna] ==  getVivo()){
-        cout << getVivo();
-      }
-      else{
-        cout << getMorto();
-      }
-    }
-    cout << endl;
   }
 }
 
@@ -187,15 +146,11 @@ void Vetor::colarMatriz(){
       else if(matriz_reserva[linha][coluna] =='.'){
         setMAtriz(linha, coluna,'.');
       }
-      //matriz[linha][coluna] = matriz_reserva[linha][coluna];
     }
   }
 }
 
 void Vetor::imprimecolarMatriz(int valor_linha,int valor_coluna){
-
-
-    //cout <<"imprime:"<< valor_linha << " " << valor_coluna << endl;
 
     for(linha=0 ; linha<  valor_linha; linha++){
       for(coluna=0; coluna< valor_coluna ; coluna++){
@@ -209,5 +164,3 @@ void Vetor::imprimecolarMatriz(int valor_linha,int valor_coluna){
       cout << endl;
     }
   }
-
-//virtual void imprimecolarMatriz() = 0;
