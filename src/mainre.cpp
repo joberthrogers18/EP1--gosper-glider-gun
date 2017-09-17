@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-#include "organismo.hpp"
+#include "glider.hpp"
 #include "glider_gun.hpp"
 #include "exploder.hpp"
 
@@ -39,7 +39,7 @@ if(entrada != 1  && entrada != 2 && entrada != 3 )
 
 if(entrada == 1)
 {
-  Organismo matriz;
+  Glider matriz;
 
   cout << "(1) Se deseja ver como um GLIDDER se comporta:" << endl;
   cout << "(2) Se deseja escolher a posição de inicio do Glider:" << endl;
@@ -58,7 +58,7 @@ if(entrada == 1)
   }
 
   if (entrada2 == 1){
-    matriz.block();
+    matriz.glider();
   }
   else if(entrada2 == 2){
     cout << "Digite o numero de linha a ser deslocadas:"<<endl;
@@ -89,7 +89,7 @@ if(entrada == 1)
 
     }
 
-    matriz.block(desloca_linhas, desloca_colunas);
+    matriz.glider(desloca_linhas, desloca_colunas);
   }
 
 }
