@@ -6,9 +6,9 @@
 
 using namespace std;
 
-Glider::Glider(){
+Glider::Glider(){}
 
-}
+Glider::~Glider(){}
 
 void Glider::setIteracoes(){
   int itera;
@@ -38,7 +38,6 @@ void Glider::glider(){
   setMAtriz(2,0,'x');
   setMAtriz(2,1,'x');
   setMAtriz(2,2,'x');
-  //implementa();
 
   for(i = 0; i < 54; i ++){
     system("clear");
@@ -51,7 +50,7 @@ void Glider::glider(){
 }
 
 void Glider::glider(int linha_add, int coluna_add){
-int i, tamanho_linha, tamanho_coluna;
+int i;
 
   setIteracoes();
 
@@ -67,7 +66,6 @@ int i, tamanho_linha, tamanho_coluna;
   setMAtriz(2 +linha_add,0 + coluna_add,'x');
   setMAtriz(2 +linha_add,1 + coluna_add,'x');
   setMAtriz(2 +linha_add,2 + coluna_add,'x');
-  //implementa();
 
   for(i = 0; i < getIteracoes(); i ++){
 

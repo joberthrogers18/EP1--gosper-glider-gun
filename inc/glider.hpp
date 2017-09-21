@@ -10,6 +10,7 @@ class Glider : public Vetor{
   int itera;
 public:
   Glider();
+  ~Glider();
 
   void setIteracoes();
   int getIteracoes();
