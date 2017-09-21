@@ -6,10 +6,9 @@
 
 using namespace std;
 
-Exploder::Exploder(){
+Exploder::Exploder(){}
 
-}
-
+Exploder::~Exploder(){}
 
 void Exploder::setIteracoes(){
   int itera;

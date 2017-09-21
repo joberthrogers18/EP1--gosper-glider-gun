@@ -9,6 +9,7 @@ public:
 
 public:
   Exploder();
+  ~Exploder();
 
   void exploder();
   void exploder(int linha, int coluna);
