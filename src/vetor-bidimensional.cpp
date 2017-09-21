@@ -10,6 +10,8 @@ Vetor::Vetor(){
   morto = '.';
 }
 
+Vetor::~Vetor(){}
+
 char Vetor::getVivo(){
   return vivo;
 
